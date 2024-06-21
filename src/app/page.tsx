@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import SearchField from "@/components/searchField";
+import Table from "@/components/table";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Header />
       <main className="w-[335px] lg:w-[1024px] lg:mx-auto">
         <SearchField />
-        <h1>Tabela</h1>
+        <Table />
       </main>
     </div>
   );
