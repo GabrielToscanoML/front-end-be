@@ -23,7 +23,7 @@ function formatEmployeeData(data: any[]): Employee[] {
         job: item.job,
         admission_date: new Date(item.admission_date).toLocaleDateString(), // Formata a data para o formato dd-mm-yyyy
         phone: formatPhone(item.phone),
-        image: item.image || 'default-image-path.jpg' // Adiciona uma imagem padrão se não houver imagem
+        image: item.image || "/user-default-icon.png" // Adiciona uma imagem padrão se não houver imagem
     }));
 }
 
