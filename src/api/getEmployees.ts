@@ -7,7 +7,7 @@ export type Employee = {
     image: string,
 }
 
-const URL = 'http://localhost:3000' || 'http://localhost:3001'
+const URL = 'http://localhost:3000' || 'http://localhost:3001'; // Ambiente de desenvolvimento
 
 function formatPhone(phone: string): string {
     const country = phone.slice(0, 2); // Pega os dois primeiros digitos
@@ -30,9 +30,7 @@ function formatEmployeeData(data: any[]): Employee[] {
 export async function getAllEmloyeesData(): Promise<Employee[]> {
     try {
         const response = await fetch(`${URL}/employees`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+        if (!response.ok) throw new Error('Network response was not ok');
         const data: Employee[] = await response.json();
         return formatEmployeeData(data); // enviando os dados já formatados
     } catch (error) {
@@ -42,13 +40,13 @@ export async function getAllEmloyeesData(): Promise<Employee[]> {
 }
 
 export async function getFilteredEmployeesData(filter: string): Promise<Employee[]> {
-   const AllDataFormated = await getAllEmloyeesData(); // Pegando todos os dados já formatados usando a função acima
-   const result = AllDataFormated.filter(employee => {
-    return (
-    employee.name.toLowerCase().includes(filter.toLowerCase()) // filtro por nome
-    || employee.job.toLowerCase().includes(filter.toLowerCase()) // filtro por cargo
-    || employee.phone.toLowerCase().includes(filter.toLowerCase()) // filtro por telefone
-  );
+    const AllDataFormated = await getAllEmloyeesData(); // Pegando todos os dados já formatados usando a função acima
+    const result = AllDataFormated.filter(employee => {
+        return (
+            employee.name.toLowerCase().includes(filter.toLowerCase()) // filtro por nome
+            || employee.job.toLowerCase().includes(filter.toLowerCase()) // filtro por cargo
+            || employee.phone.toLowerCase().includes(filter.toLowerCase()) // filtro por telefone
+        );
    });
    return result;
 }

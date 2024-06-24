@@ -7,9 +7,10 @@ import { Employee, getFilteredEmployeesData } from "@/api/getEmployees";
 
 interface SearchFieldProps {
   setEmployees: React.Dispatch<React.SetStateAction<Employee[]>>;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function SearchField({ setEmployees }: SearchFieldProps) {
+export default function SearchField({ setEmployees, setLoading }: SearchFieldProps) {
 
   const [filter, setFilter] = useState('');
   const [debouncedFilter, setDebouncedFilter] = useState('');
@@ -26,10 +27,11 @@ export default function SearchField({ setEmployees }: SearchFieldProps) {
 
   // Adicionando debounce para diminuir a quantidade de requisições feitas e deixando mais eficiente
   useEffect(() => {
+    setLoading(true)
     const handler = setTimeout(() => {
       setDebouncedFilter(filter);
+      setLoading(false)
     }, 500); // Tempo de espera antes de aplicar o debounce
-
     return () => {
       clearTimeout(handler);
     };

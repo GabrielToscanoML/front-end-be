@@ -6,12 +6,14 @@ import { useState } from "react";
 import downIcon from "../../public/down-icon.svg";
 import upIcon from "../../public/up-icon.svg";
 import React from "react";
+import Loading from "./loading";
 
 interface TableProps {
     employees: Employee[];
+    isLoading: boolean;
 }
 
-export default function Table({ employees }: TableProps) {
+export default function Table({ employees, isLoading }: TableProps) {
 
     const [expandedRows, setExpandedRows] = useState<number[]>([]);
 
@@ -26,6 +28,8 @@ export default function Table({ employees }: TableProps) {
     return (
         <main className="w-full md:w-[768px] lg:w-[1024px] lg:mx-auto px-4 mx-auto">
             <div className="rounded-lg overflow-hidden bg-white shadow mx-4">
+            {isLoading ? <Loading />
+            :
                 <table className="w-full">
                     <thead className="h-12 bg-gradient-to-b from-gradient-start to-gradient-end text-white drop-shadow-lg">
                         <tr>
@@ -73,7 +77,8 @@ export default function Table({ employees }: TableProps) {
                         }
                     </tbody>
                 </table>
-                {employees.length == 0 && <div className="color-red-500 text-center py-16 font-medium text-lg">Nenhum funcionário foi encontrado!</div>}
+            }
+                {employees.length == 0 && <div className="text-center py-16 font-medium text-lg">Nenhum funcionário foi encontrado!</div>}
             </div>
         </main>
     );

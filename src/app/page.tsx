@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
 
   const [employees, setEmployees] = useState<Employee[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(false);
   
   async function requestEmployeesData() {
       const result = await getAllEmloyeesData();
@@ -22,8 +23,8 @@ export default function Home() {
     <div className="flex flex-col bg-gray-100 h-screen">
       <Header />
       <main className="lg:w-[1024px] lg:mx-auto pb-16">
-        <SearchField setEmployees={setEmployees} />
-        <Table employees={employees} />
+        <SearchField setEmployees={setEmployees} setLoading={setLoading} />
+        <Table employees={employees} isLoading={isLoading} />
       </main>
     </div>
   );
