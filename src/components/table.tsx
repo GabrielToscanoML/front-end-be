@@ -1,24 +1,19 @@
 'use client'
 
-import { Employee, getAllEmloyeesData } from "@/api/getEmployees";
+import { Employee } from "@/api/getEmployees";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import downIcon from "../../public/down-icon.svg";
 import upIcon from "../../public/up-icon.svg";
 import React from "react";
 
-export default function Table() {
-    const [employees, setEmployees] = useState<Employee[]>([]);
+interface TableProps {
+    employees: Employee[];
+}
+
+export default function Table({ employees }: TableProps) {
+
     const [expandedRows, setExpandedRows] = useState<number[]>([]);
-
-    async function requestEmployeesData() {
-        const result = await getAllEmloyeesData();
-        setEmployees(result);
-    }
-
-    useEffect(() => {
-        requestEmployeesData();
-    }, []); // Array vazio para executar apenas quando a página for atualizada
 
     const toggleRow = (id: number) => {
         setExpandedRows(prevExpandedRows =>
@@ -78,6 +73,7 @@ export default function Table() {
                         }
                     </tbody>
                 </table>
+                {employees.length == 0 && <div className="color-red-500 text-center py-16 font-medium text-lg">Nenhum funcionário foi encontrado!</div>}
             </div>
         </main>
     );

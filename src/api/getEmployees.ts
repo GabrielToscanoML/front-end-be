@@ -41,3 +41,14 @@ export async function getAllEmloyeesData(): Promise<Employee[]> {
     }
 }
 
+export async function getFilteredEmployeesData(filter: string): Promise<Employee[]> {
+   const AllDataFormated = await getAllEmloyeesData(); // Pegando todos os dados já formatados usando a função acima
+   const result = AllDataFormated.filter(employee => {
+    return (
+    employee.name.toLowerCase().includes(filter.toLowerCase()) // filtro por nome
+    || employee.job.toLowerCase().includes(filter.toLowerCase()) // filtro por cargo
+    || employee.phone.toLowerCase().includes(filter.toLowerCase()) // filtro por telefone
+  );
+   });
+   return result;
+}
