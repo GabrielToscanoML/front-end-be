@@ -1,5 +1,9 @@
 # Boas vindas ao projeto Desafio Front-End BE!
 
+![image](https://github.com/GabrielToscanoML/front-end-be/assets/68169956/a042ced5-968a-4ab3-ba27-31b54d1f296c)
+![image](https://github.com/GabrielToscanoML/front-end-be/assets/68169956/f9e08a93-3f44-45c0-872b-da7568dbd77d)
+![image](https://github.com/GabrielToscanoML/front-end-be/assets/68169956/3c3e161b-3e96-4685-99cc-059669703b4b)
+
 Este projeto foi desenvolvido para resolver um desafio técnico Front-End nível Jr.
 O projeto trata-se de uma tabela de visualização de funcionários, onde é possível filtrar os funcionários pelo nome, telefone ou cargo.
 O projeto é responsivo.
