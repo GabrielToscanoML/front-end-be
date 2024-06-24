@@ -23,8 +23,14 @@ export default function Home() {
     <div className="flex flex-col bg-gray-100 h-screen">
       <Header />
       <main className="lg:w-[1024px] lg:mx-auto pb-16">
-        <SearchField setEmployees={setEmployees} setLoading={setLoading} />
-        <Table employees={employees} isLoading={isLoading} />
+        <SearchField
+          setEmployees={setEmployees}
+          setLoading={setLoading}
+        />
+        <Table
+          employees={employees}
+          isLoading={isLoading}
+        />
       </main>
     </div>
   );

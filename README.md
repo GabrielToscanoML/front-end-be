@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Boas vindas ao projeto Desafio Front-End BE!
 
-## Getting Started
+Este projeto foi desenvolvido para resolver um desafio técnico Front-End nível Jr.
+O projeto trata-se de uma tabela de visualização de funcionários, onde é possível filtrar os funcionários pelo nome, telefone ou cargo.
+O projeto é responsivo.
 
-First, run the development server:
+Este projeto foi desenvolvido com as seguitnes tecnologias:
+- Yarn
+- React
+- NextJS
+- Typescript
+- TailwindCSS
+- Node na versão 21.7.1
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Executando o projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pré Requisitos :heavy_exclamation_mark:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para executar esse projeto, é importante ter essas ferramentas instaladas!!
+- Node na versão 20 ou superior! (Recomendada a versão 21)
+- Git
+- Yarn na versão 1.22.22 ou superior! (Recomendada a versão 1.22.22)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Instalação
 
-## Learn More
+Utilizando um terminal de sua preferência, utilize os seguintes comandos:
 
-To learn more about Next.js, take a look at the following resources:
+1. Faça um clone do repositório
+   ```sh
+   git clone git@github.com:GabrielToscanoML/front-end-be.git
+   ```
+2. Entre na pasta clonada
+   ```sh
+   cd front-end-be
+   ```
+3. Instale todas as dependências 
+   ```
+   yarn install
+   ```
+4. Execute a aplicação
+   ```
+   yarn dev
+   ```
+5. Acesse 'http://localhost:3000' ou a porta que estiver disponível que será avisada no terminal para ver o projeto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Acesso aos dados da API simulada
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Para ter acesso aos dados que alimentarão o projeto, faça o seguinte:
+caso você não tenha, instale o pacote json-server;
 
-## Deploy on Vercel
+clone este repositório do GitHub em sua máquina: https://github.com/BeMobile/desafio-front-end;
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+entre na pasta do projeto, em sua máquina, e, por meio da linha de comando, execute o comando json-server --watch db.json, para consumir a API simulada;
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+É necessário deixar o json-server rodando no terminal para que os dados sejam visualizados no projeto.
+
+Caso você tenha problemas com o json-server, tente rodá-lo com npx json-server db.json ou 
+com yarn json-server <path>/db.json, em que <path> é o caminho completo até o diretório em que o arquivo db.json está localizado.
+
+Uma dica importante!! Caso dê conflito com portas disponíveis para rodar a API simulada, após a execução do arquivo da API, verifique a porta que está rodando a API e 
+em seguida, altere o arquivo "getEmployees.ts", na linha 10, que está dentro da pasta "api", no projeto que está o Front-End para a porta certa.
+
+Caso tenha alguma dúvida, ou algum probleminha, entre em contato comigo:
+- ✉️ Email: gabrieltoscano1@outlook.com
+- 🔗 Linkedin: https://www.linkedin.com/in/gabrieltoscanoml/
