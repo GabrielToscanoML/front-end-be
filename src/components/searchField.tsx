@@ -5,7 +5,7 @@ import SearchIcon from "../../public/search-icon.svg";
 
 export default function SearchField() {
   return (
-      <div className="flex flex-col gap-7 lg:flex-row lg:justify-between lg:items-center lg:w-[1024px] lg:mx-auto my-8 px-8">
+      <div className="flex flex-col gap-7 sm:flex-row sm:justify-between sm:items-center sm:w-full lg:mx-auto my-8 px-8">
         <h1 className="black font-medium text-2xl">Funcionários</h1>
         <div className="flex justify-between items-center w-[290px] h-12 rounded-lg bg-white border">
           <input

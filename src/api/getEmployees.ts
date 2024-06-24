@@ -7,7 +7,7 @@ export type Employee = {
     image: string,
 }
 
-const URL = 'http://localhost:3001'
+const URL = 'http://localhost:3000'
 
 function formatPhone(phone: string): string {
     const country = phone.slice(0, 2); // Pega os dois primeiros digitos
